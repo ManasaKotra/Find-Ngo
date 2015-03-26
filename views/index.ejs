@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="/stylesheets/bootstrap-cosmo.css" rel="stylesheet">
+<link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
+<link href="/stylesheets/mystyle.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'> 
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>projectNGO.com</title>
+</head>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+<% include /partials/header %>
+
+</nav>
+
+
+<body>
+<!--carousal-->
+<div class="container">
+<section class="carosal">
+<div id="carousel-example-generic " class=" carousel slide" data-ride="carousel">
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+<div class="item active">
+<img src="/images/1.jpg" alt="...">
+<div class="carousel-caption">
+...
+</div>
+</div>
+<div class="item">
+<img src="/images/1.jpg" alt="...">
+<div class="carousel-caption">
+...
+</div>
+</div>
+<div class="item">
+<img src="/images/1.jpg" alt="...">
+<div class="carousel-caption">
+...
+</div>
+</div>
+<div class="item">
+<img src="/images/1.jpg" alt="...">
+<div class="carousel-caption">
+...
+</div>
+</div>
+</div>
+</div>
+<!--carousal-->
+</section>
+</div>
+<div class="container searchcont" >
+<section>
+<h2 > Find NGO's near you ... </h2> </div>
+<div class="container">
+<form class="form-inline " align="center" role="form" action="" method="POST" target="_self">
+<!-- Split button -->
+<div class="btn-group ">
+<button type="button" class="btn btn-default btn-city" name="city"> Hyderabad </button>
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+<span class="caret"></span>
+<span class="sr-only">Toggle Dropdown</span>
+</button>
+<ul class="dropdown-menu" id="dropdown-menu1" role="menu">
+<!-- <li><a href="#" data-value="Hyderabad">Hyderabad</a></li> -->
+</ul>
+</div><!-- Split button -->
+<!-- Split button -->
+<div class="btn-group ">
+<button type="button" class="btn btn-default btn-locality" name="locality">Locality</button>
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+<span class="caret"></span>
+<span class="sr-only">Toggle Dropdown</span>
+</button>
+<ul class="dropdown-menu" id="dropdown-menu2" role="menu">
+<li><a href="#" data-value="Abids">All</a></li>
+<li><a href="#" data-value="Abids">Abids</a></li>
+<li><a href="#" data-value="Dilsukhnagar">Dilsukhnagar</a></li>
+<li><a href="#" data-value="Panjagutta">Panjagutta</a></li>
+</ul>
+</div><!-- Split button -->
+<div class="form-group">
+<input type="text" name="interest" id="search" class="form-control " placeholder="Area of Interest"/>
+</div>
+<div class="form-group">
+<button type="submit" href="search.php" id="searchsubmit" value="Search" class="btn btn-md btn-default btn-block searchbutton"><a style="text-decoration:none;color:white;">Search&nbsp;&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i></a></button>
+</div>
+</form>
+</div>
+</section>
+</div>
+<div class="searchres container">
+<hr>
+
+<div class="col-md-8">
+<a href="single.php?id=<" style="text-decoration:none"><h2></h2></a>
+<p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></p>
+<a href="#" style="text-decoration:none"><nobr>Show on map</nobr></a><br>
+<p></p>
+<p>Contact : </a> </p>
+</div>
+
+</div>
+<div class="infoabout">
+<div class="container ">
+<hr>
+<div class="row">
+<div class="col-md-4 ">
+<i class="fa fa-smile-o fa-6x" ></i>
+<h3>Volunteer !</h3>
+</div>
+<div class="col-md-4 ">
+<i class="fa fa-heart-o fa-6x" ></i>
+<h3>Help !</h3>
+</div>
+<div class="col-md-4 ">
+<i class="fa fa-thumbs-o-up fa-6x" ></i>
+<h3>Connect !</h3>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<footer class="footer">
+
+	<% include /partials/footer %>
+
+</footer>
+
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
+<script src="/javascripts/myscript.js"></script>
+
+</body>
+</html>
