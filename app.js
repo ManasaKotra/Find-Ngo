@@ -42,8 +42,45 @@ app.post('/',function(req, res){
 	
 	ngo.find( { "locality": req_locality } , function(err, doc) {
   		if (err) return console.log(err);
-  			console.dir(doc);
+  			// console.dir(doc);
+        // res.render('ngo', { docs: doc });
+
+        for (var i = 0; i < doc.length; i++) {          
+            var title_doc = doc[i].title;
+            var address_doc = doc[i].address;
+            var description_doc = doc[i].description;
+            var contact_doc = doc[i].contact;
+
+            res.render('ngo', {title: title_doc, address: address_doc, 
+            description: description_doc, contact: contact_doc });
+        }
 	});
+
+
+});
+
+app.post('ngo',function(req, res){
+
+  var req_locality = req.body.locality;
+  var req_interest = req.body.interest;
+
+  console.log(req.body);
+  
+  ngo.find( { "locality": req_locality } , function(err, doc) {
+      if (err) return console.log(err);
+        // console.dir(doc);
+        // res.render('ngo', { docs: doc });
+
+        for (var i = 0; i < doc.length; i++) {          
+            var title_doc = doc[i].title;
+            var address_doc = doc[i].address;
+            var description_doc = doc[i].description;
+            var contact_doc = doc[i].contact;
+
+            res.render('ngo', {title: title_doc, address: address_doc, 
+            description: description_doc, contact: contact_doc });
+        }
+  });
 
 
 });

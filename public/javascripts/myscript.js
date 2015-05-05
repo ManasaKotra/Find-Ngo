@@ -17,3 +17,4 @@ $(".infoabout i").css({opacity:5});
 $('#registerbtn').on('click' , function() { 
   $.modal.close();
 });
+
