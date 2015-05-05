@@ -1,1 +1,1 @@
-# just Practicing MEAN stack
+# Practicing ExpressJS and MongoDB

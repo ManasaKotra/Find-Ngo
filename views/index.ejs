@@ -5,10 +5,10 @@
 <link href="/stylesheets/mystyle.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'> 
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>projectNGO.com</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>projectNGO.com</title>
 </head>
 
 
@@ -53,53 +53,64 @@
 </div>
 </div>
 <!--carousal-->
+
+
+
 </section>
 </div>
 <div class="container searchcont" >
 <section>
 <h2 > Find NGO's near you ... </h2> </div>
 <div class="container">
-<form class="form-inline " align="center" role="form" action="" method="POST" target="_self">
-<!-- Split button -->
-<div class="btn-group ">
-<button type="button" class="btn btn-default btn-city" name="city"> Hyderabad </button>
-<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-<span class="caret"></span>
-<span class="sr-only">Toggle Dropdown</span>
-</button>
-<ul class="dropdown-menu" id="dropdown-menu1" role="menu">
-<!-- <li><a href="#" data-value="Hyderabad">Hyderabad</a></li> -->
-</ul>
-</div><!-- Split button -->
-<!-- Split button -->
-<div class="btn-group ">
-<button type="button" class="btn btn-default btn-locality" name="locality">Locality</button>
-<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-<span class="caret"></span>
-<span class="sr-only">Toggle Dropdown</span>
-</button>
-<ul class="dropdown-menu" id="dropdown-menu2" role="menu">
-<li><a href="#" data-value="Abids">All</a></li>
-<li><a href="#" data-value="Abids">Abids</a></li>
-<li><a href="#" data-value="Dilsukhnagar">Dilsukhnagar</a></li>
-<li><a href="#" data-value="Panjagutta">Panjagutta</a></li>
-</ul>
-</div><!-- Split button -->
-<div class="form-group">
-<input type="text" name="interest" id="search" class="form-control " placeholder="Area of Interest"/>
+<form class="form-inline " role="form" action="" method="POST" target="_self">
+
+<div class="btn-group">
+	<button type="button" class="btn btn-default btn_city" id="btn-locality" name="city"> Hyderabad </button>
 </div>
+
+<!-- <div class="btn-group">
+<select>
+ 	<button type="button" class="btn btn-default btn_locality locality" id="btn-locality" name="locality">Locality</button>
+ 	<optgroup>
+ 		<option value="All">All</option>
+  		<option value="Abids">Abids</option>
+  		<option value="Dilsukhnagar">Dilsukhnagar</option>
+  		<option value="Panjagutta">Panjagutta</option>
+ 	</optgroup>  	
+</select> 
+</div> -->
+
 <div class="form-group">
-<button type="submit" href="search.php" id="searchsubmit" value="Search" class="btn btn-md btn-default btn-block searchbutton"><a style="text-decoration:none;color:white;">Search&nbsp;&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i></a></button>
+	<input type="text" name="locality" id="input-search" class="form-control " placeholder="Locality" list="suggestions"/>
+		<datalist id="suggestions">
+		    <option value="All">
+		    <option value="Abids">
+		    <option value="Dilsukhnagar">
+		    <option value="Punjagutta">
+		</datalist>
+</div>		
+
+<div class="form-group">
+	<input type="text" name="interest" id="input-search" class="form-control " placeholder="Area of Interest"/>
 </div>
+
+<div class="form-group">
+	<button type="submit" href="" id="searchsubmit" value="Search" class="btn btn-md btn-default btn-block searchbutton"><a style="text-decoration:none;color:white;">Search&nbsp;&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i></a></button>
+</div>
+
 </form>
+
 </div>
 </section>
 </div>
+
+
+
 <div class="searchres container">
 <hr>
 
 <div class="col-md-8">
-<a href="single.php?id=<" style="text-decoration:none"><h2></h2></a>
+<a href="" style="text-decoration:none"><h2></h2></a>
 <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></p>
 <a href="#" style="text-decoration:none"><nobr>Show on map</nobr></a><br>
 <p></p>
@@ -140,6 +151,7 @@
 <script src="/javascripts/bootstrap.min.js"></script>
 <script src="/javascripts/modernizr.js"></script>
 <script src="/javascripts/myscript.js"></script>
+<script type='text/javascript' src='nquery.js' charset='utf-8'></script>
 
 </body>
 </html>
