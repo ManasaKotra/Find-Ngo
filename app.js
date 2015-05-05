@@ -20,15 +20,17 @@ app.get('/', function(req, res) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 //MongoDB setup
 var ngoSchema = new mongoose.Schema({  
   title: String,
   address: String,
   description: String,
-  contact: String,
-});
-mongoose.model('ngos', ngoSchema);  
-var ngos = mongoose.model('ngos');
+  contact: String },
+  { collection: 'ngolist'});
+
+var ngo = mongoose.model('ngo', ngoSchema);
+
 
 //search request
 app.post('/',function(req, res){
@@ -36,17 +38,13 @@ app.post('/',function(req, res){
 	var req_locality = req.body.locality;
 	var req_interest = req.body.interest;
 
-	 console.log(req.body);
-	// console.log("locality : " + req_locality
-	//  	+ ", interest : " + req_interest);
+	console.log(req.body);
+	
+	ngo.find( { "locality": req_locality } , function(err, doc) {
+  		if (err) return console.log(err);
+  			console.dir(doc);
+	});
 
-// var Findngo = new ngos();	
-// Findngo.find('title: THP',function(err, ngos){
-// 	for (var i = 0; i < ngos.length; i++) {
-// 		console.log('ID:' + ngos[i]._id);
-// 		console.log(ngos[i].description);
-// 	}
-// });
 
 });
 

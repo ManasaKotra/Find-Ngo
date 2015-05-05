@@ -1,8 +1,38 @@
-{
-	"title": "Aadita - The Beginning",
-	"address": "Flat No. 301, Satya Sadan, F-5, Madhura Nagar. Opp Abhiruchi Swagruha Sweets, Above United Bank Of India, Yousufguda",
-	"description": "The children with Autism are provided with the services required for mainstreaming. The sensory integration and school readiness skills are necessary to prepare them to go into the society. The prime area focused by Aadita is the social skills. The child who is integrated in regular schools learns few letters, concepts but the area of prime concern is the social skills. After giving a deep thought about it Aadita is conducting social skill training which is giving excellent results. Our parental feed back speaks about it.",
-	"contact": "+91 040 2373-7201, 99853-09290 / 97014-57346, 98851-40696 / 99891-37873"	
-	"locality": "yousufguda",
-	"interest": ["children","disabled"]
-}	
+[
+	{
+		"title": "Aadita - The Beginning",
+		"address": "Flat No. 301, Satya Sadan, F-5, Madhura Nagar. Opp Abhiruchi Swagruha Sweets, Above United Bank Of India, Yousufguda",
+		"description": "The children with Autism are provided with the services required for mainstreaming. The sensory integration and school readiness skills are necessary to prepare them to go into the society. The prime area focused by Aadita is the social skills. The child who is integrated in regular schools learns few letters, concepts but the area of prime concern is the social skills. After giving a deep thought about it Aadita is conducting social skill training which is giving excellent results. Our parental feed back speaks about it.",
+		"contact": "+91 040 2373-7201, 99853-09290 / 97014-57346, 98851-40696 / 99891-37873",
+		"locality": "Yousufguda"
+	},
+
+	{
+		"title": "Don Bosco Navajeevan Rehabilitation Center",
+		"address": "Pragathi Nagar, Ramanthapur, Hyderabad - 500013",
+		"description": "Area Of Activity: Rehabilation of abondonned & street children & educating them towards job oriented cources (Electronics, Refrigeration, Computers, Driving, Tailoring)",
+		"locality": "Ramanthapur"
+	},
+
+	{
+		"title": "Animal Rescue And Rehabilitation Society",
+		"address": "Bank Colony, Moosarambagh, Hyderabad - 500036",
+		"description": "Animal Welfare / Against atrocities on animals, and care for injured animals. ",
+		"locality": "Moosarambagh"
+	},
+
+	{
+		"title": "International Special Needs Institution",
+		"address": "No. 3/6/380, Street No. 2, Himayatnagar, Hyderabad - 500029 ",
+		"description": "The International Special Needs Institution is a social enterprise with a vision of empowering and enabling women with disabilities to live a sustainable independent high quality of life. Through their learning program, which offers a value-driven, educational, and vocational training in a conducive learning environment with equal emphasis on intellectual and emotional growth, they assert that differently-abled women will discover their true passions and abilities.",
+		"locality": "Himayatnagar"
+	},
+
+	{
+		"title": "Thakur Hari Prasad Institute Of Research & Rehabilitation For The Mentally Handicapped",
+		"address": "Vivekananda Nagar, Kamala Nagar, Road Number 3, Dilsukhnagar, Hyderabad - 500060",
+		"description": "The THP Institute was established in 1968 by Thakur Hari Prasad, whose oldest son was mentally handicapped. Since then, the institute has established itself as one of the premier institutions of care for the mentally disabled.",
+		"locality": "Dilsukhnagar"
+	}
+
+]	
