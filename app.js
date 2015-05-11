@@ -39,21 +39,32 @@ app.post('/',function(req, res){
 	var req_interest = req.body.interest;
 
 	console.log(req.body);
+
 	
-	ngo.find( { "locality": req_locality } , function(err, doc) {
+	ngo.find( { "locality": req_locality } , function(err, docs) {
   		if (err) return console.log(err);
   			// console.dir(doc);
         // res.render('ngo', { docs: doc });
 
-        for (var i = 0; i < doc.length; i++) {          
-            var title_doc = doc[i].title;
-            var address_doc = doc[i].address;
-            var description_doc = doc[i].description;
-            var contact_doc = doc[i].contact;
+        // for (var i = 0; i < docs.length; i++) {          
+        //     var title_doc = docs[i].title;
+        //     var address_doc = docs[i].address;
+        //     var description_doc = docs[i].description;
+        //     var contact_doc = docs[i].contact;
 
-            res.render('ngo', {title: title_doc, address: address_doc, 
-            description: description_doc, contact: contact_doc });
-        }
+        //     res.render('ngo', {title: title_doc, address: address_doc, 
+        //     description: description_doc, contact: contact_doc });
+        // }
+        
+        var ngoslist = {};
+
+        docs.forEach(function(ngo){
+          ngoslist[ngo.title] = ngo;
+        });
+
+        res.render('ngo', { ngolist: ngoslist } );
+
+
 	});
 
 
@@ -68,18 +79,14 @@ app.post('ngo',function(req, res){
   
   ngo.find( { "locality": req_locality } , function(err, doc) {
       if (err) return console.log(err);
-        // console.dir(doc);
-        // res.render('ngo', { docs: doc });
+        var ngoslist = {};
 
-        for (var i = 0; i < doc.length; i++) {          
-            var title_doc = doc[i].title;
-            var address_doc = doc[i].address;
-            var description_doc = doc[i].description;
-            var contact_doc = doc[i].contact;
+        docs.forEach(function(ngo){
+          ngoslist[ngo.title] = ngo;
+        });
 
-            res.render('ngo', {title: title_doc, address: address_doc, 
-            description: description_doc, contact: contact_doc });
-        }
+        res.send(ngoslist);      
+
   });
 
 
