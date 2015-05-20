@@ -3,7 +3,7 @@
 <link href="/stylesheets/bootstrap-cosmo.css" rel="stylesheet">
 <link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
 <link href="/stylesheets/mystyle.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'> 
+<link href='http://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,13 +43,20 @@
 
 <div class="form-group">
 	<input type="text" name="locality" id="input-search" class="form-control " placeholder="Locality" list="suggestions"/>
-		<datalist id="suggestions">
-		    <option value="All">
-		    <option value="Abids">
-		    <option value="Dilsukhnagar">
-		    <option value="Punjagutta">
-		</datalist>
-</div>		
+	<datalist id="suggestions">
+			<option value="All">
+			<option value="Abids">
+			<option value="Dilsukhnagar">
+			<option value="Punjagutta">
+			<option value="Domalguda">
+			<option value="Moosarambagh">
+			<option value="Ramanthapur">
+			<option value="Himayatnagar">
+			<option value="Banjara Hills">
+			<option value="Jubilee Hills">
+			<option value="Gachibowli">
+	</datalist>
+</div>
 
 <div class="form-group">
 	<input type="text" name="interest" id="input-search" class="form-control " placeholder="Area of Interest"/>
@@ -68,17 +75,15 @@
 
 <div class="searchres container">
 <hr>
-<% 
-//var rankArray = JSON.parse( !{JSON.stringify(ranking)} );
-for (var i = 0; i < ngolist.length; i++) { %>
+<% for (var i = 0; i < list.length; i++) { %>
 <div class="col-md-8">
-<a href="" style="text-decoration:none"><h2><%= ngolist[i].title  %></h2></a>
-<p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><br /><%= ngolist[i].address %></p>
-<a href="#" style="text-decoration:none"><nobr>Show on map</nobr></a><%= ngolist[i].description %><br>
-<p></p>
-<p>Contact : <%= ngolist[i].contact  %> </p>
-</div> 
-<% }  %>
+<a href="" style="text-decoration:none"><h2><%= list[i].title  %></h2></a>
+<p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;<%= list[i].address %>
+<a href="#" style="text-decoration:none">&nbsp;&nbsp;<nobr>- Show on map</nobr></a></p>
+<p><%= list[i].description %><br></p>
+<p><span style="font-size:20px;">Contact :</span> <%= list[i].contact  %> </p>
+</div>
+<% } %>
 </div>
 
 
@@ -98,6 +103,7 @@ for (var i = 0; i < ngolist.length; i++) { %>
 <script src="/javascripts/modernizr.js"></script>
 <script src="/javascripts/myscript.js"></script>
 
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
 	    function initialize() {
         var mapCanvas = document.getElementById('map-canvas');
@@ -110,10 +116,6 @@ for (var i = 0; i < ngolist.length; i++) { %>
       }
       google.maps.event.addDomListener(window, 'load', initialize);
 
-</script>
-
-<script>
-	var locallist = Json.stringify(ngoslist);
 </script>
 
 </body>

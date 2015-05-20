@@ -1,6 +1,6 @@
 {
   "name": "expressapp",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.12.3",
     "connect": "^3.3.5",
