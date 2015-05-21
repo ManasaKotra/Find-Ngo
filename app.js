@@ -11,10 +11,6 @@ var app = express();
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
-// index page
-app.get('/', function(req, res) {
-    res.render('index');
-});
 
 // use res.render to load up an ejs view file
 app.use(bodyParser.json());
@@ -32,6 +28,15 @@ var ngoSchema = new mongoose.Schema({
 var ngo = mongoose.model('ngo', ngoSchema);
 
 
+// index page
+app.get('/', function(req, res) {
+    res.render('index');
+    // ngo.find( {} , function(err, docs) {
+    // 		if (err) return console.log(err);
+    //       res.render('index', { list: docs });
+  	// });
+});
+
 //search request
 app.post('/',function(req, res){
 
@@ -40,19 +45,25 @@ app.post('/',function(req, res){
 
 	console.log(req.body);
 
-
-	ngo.find( { "locality": req_locality } , function(err, docs) {
-  		if (err) return console.log(err);
-        res.render('ngo', { list: docs });
-	});
+  if( req_locality == "all" ){
+    ngo.find( {} , function(err, docs) {
+    		if (err) return console.log(err);
+          res.render('ngo', { list: docs });
+    });
+  } else{
+    ngo.find( { "locality": req_locality } , function(err, docs) {
+    		if (err) return console.log(err);
+          res.render('ngo', { list: docs });
+  	});
+  }
 
 
 });
 
 app.post('ngo',function(req, res){
 
-  var req_locality = req.body.locality;
-  var req_interest = req.body.interest;
+  var req_locality = req.body.locality.toLowerCase();
+	var req_interest = req.body.interest.toLowerCase();
 
   console.log(req.body);
 
