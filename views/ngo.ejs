@@ -44,23 +44,13 @@
 <div class="form-group">
 	<input type="text" name="locality" id="input-search" class="form-control " placeholder="Locality" list="suggestions"/>
 	<datalist id="suggestions">
-			<option value="All">
-			<option value="Abids">
-			<option value="Dilsukhnagar">
-			<option value="Punjagutta">
-			<option value="Domalguda">
-			<option value="Moosarambagh">
-			<option value="Ramanthapur">
-			<option value="Himayatnagar">
-			<option value="Banjara Hills">
-			<option value="Jubilee Hills">
-			<option value="Gachibowli">
+			<option value="All"><option value="Abids"><option value="Dilsukhnagar"><option value="Punjagutta"><option value="Domalguda"><option value="Moosarambagh"><option value="Ramanthapur"><option value="Himayatnagar"><option value="Banjara Hills"><option value="Jubilee Hills"><option value="Gachibowli">
 	</datalist>
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
 	<input type="text" name="interest" id="input-search" class="form-control " placeholder="Area of Interest"/>
-</div>
+</div> -->
 
 <div class="form-group">
 	<button type="submit" href="" id="searchsubmit" value="Search" class="btn btn-md btn-default btn-block searchbutton"><a style="text-decoration:none;color:white;">Search&nbsp;&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i></a></button>
@@ -82,10 +72,12 @@
 <a href="#" style="text-decoration:none">&nbsp;&nbsp;<nobr>- Show on map</nobr></a></p>
 <p><%= list[i].description %><br></p>
 <p><span style="font-size:20px;">Contact :</span> <%= list[i].contact  %> </p>
+<div id="latlan" style="visibility: hidden;">
+	<%= list[i].lat  %> <%= list[i].lan  %>
+</div>
 </div>
 <% } %>
 </div>
-
 
 
 <footer class="footer">
@@ -99,20 +91,37 @@
 <script src="/javascripts/bootstrap.min.js"></script>
 <script src="/javascripts/modernizr.js"></script>
 <script src="/javascripts/myscript.js"></script>
-
 <script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-	    function initialize() {
-        var mapCanvas = document.getElementById('map-canvas');
-        var mapOptions = {
-          center: new google.maps.LatLng(17.20, 78.30),
-          zoom: 10,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions)
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
 
+
+<script>
+	window.onload=function()
+  {
+    var mapOptions = {
+      zoom: 10,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: new google.maps.LatLng(17.20, 78.30)
+    };
+
+		var ngolist = <%-JSON.stringify(list)%>;
+		console.log(ngolist);
+
+    map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+    var bounds = new google.maps.LatLngBounds();
+    var places =[];
+
+			for( i=0 ; i< ngolist.length ; i++ ){
+				  places.push(new google.maps.LatLng(ngolist[i].lat ,ngolist[i].lan));
+			}
+
+      for( i=0 ; i < places.length ; i++)
+      {
+        var marker= new google.maps.Marker({position:places[i],map: map,title:'place Number'+i});
+        bounds.extend(places[i]);
+      }
+      map.fitBounds(bounds);
+  }
 </script>
+
 </body>
 </html>

@@ -19,10 +19,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //MongoDB setup
 var ngoSchema = new mongoose.Schema({
+  _id: String,
   title: String,
   address: String,
   description: String,
-  contact: String },
+  contact: String,
+  locality: String,
+  lat: String,
+  lan: String },
   { collection: 'ngolist'});
 
 var ngo = mongoose.model('ngo', ngoSchema);
@@ -41,11 +45,33 @@ app.get('/', function(req, res) {
 app.post('/',function(req, res){
 
 	var req_locality = req.body.locality.toLowerCase();
-	var req_interest = req.body.interest.toLowerCase();
+	//var req_interest = req.body.interest.toLowerCase();
 
 	console.log(req.body);
 
-  if( req_locality == "all" ){
+  if( req_locality == "all" || req_locality == "" ){
+    ngo.find( {} , function(err, docs) {
+    		if (err) return console.log(err);
+          res.render('ngo', {locals: { list: docs }});
+    });
+  } else{
+    ngo.find( { "locality": req_locality } , function(err, docs) {
+    		if (err) return console.log(err);
+          res.render('ngo', {locals: { list: docs }});
+  	});
+  }
+
+
+});
+
+app.post('ngo',function(req, res){
+
+  var req_locality = req.body.locality.toLowerCase();
+	//var req_interest = req.body.interest.toLowerCase();
+
+	console.log(req.body);
+
+  if( req_locality == "all" || req_locality == "" ){
     ngo.find( {} , function(err, docs) {
     		if (err) return console.log(err);
           res.render('ngo', { list: docs });
@@ -57,20 +83,6 @@ app.post('/',function(req, res){
   	});
   }
 
-
-});
-
-app.post('ngo',function(req, res){
-
-  var req_locality = req.body.locality.toLowerCase();
-	var req_interest = req.body.interest.toLowerCase();
-
-  console.log(req.body);
-
-  ngo.find( { "locality": req_locality } , function(err, docs) {
-  		if (err) return console.log(err);
-        res.render('ngo', { list: docs });
-	});
 
 
 });

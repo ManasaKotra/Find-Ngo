@@ -5,9 +5,9 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.12.4",
-    "express": "^4.12.4",
     "connect": "^3.3.5",
     "ejs": "^1.0.0",
+    "express": "^4.12.4",
     "mongoose": "^4.0.3"
   },
   "devDependencies": {},
@@ -21,7 +21,6 @@
   "author": "manasaK",
   "license": "ISC",
   "engines": {
-    "node": "0.10.x"
+    "node": "0.12.x"
   }
-
 }
