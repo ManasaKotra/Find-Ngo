@@ -14,23 +14,9 @@
 		"address": "Pragathi Nagar, Ramanthapur, Hyderabad - 500013",
 		"description": "Area Of Activity: Rehabilation of abondonned & street children & educating them towards job oriented cources (Electronics, Refrigeration, Computers, Driving, Tailoring)",
 		"contact": "040-2703-3112",
-		"locality": "ramanthapur"
-	},
-
-	{
-		"title": "Animal Rescue And Rehabilitation Society",
-		"address": "Bank Colony, Moosarambagh, Hyderabad - 500036",
-		"description": "Animal Welfare / Against atrocities on animals, and care for injured animals. ",
-		"contact": "98859-10035",
-		"locality": "moosarambagh"
-	},
-
-	{
-		"title": "International Special Needs Institution",
-		"address": "No. 3/6/380, Street No. 2, Himayatnagar, Hyderabad - 500029 ",
-		"description": "The International Special Needs Institution is a social enterprise with a vision of empowering and enabling women with disabilities to live a sustainable independent high quality of life. Through their learning program, which offers a value-driven, educational, and vocational training in a conducive learning environment with equal emphasis on intellectual and emotional growth, they assert that differently-abled women will discover their true passions and abilities.",
-		"contact": "040-6526-0080",
-		"locality": "himayatnagar"
+		"locality": "ramanthapur",
+		"lat": "17.395077000",
+		"lan": "78.543352000"
 	},
 
 	{
@@ -38,7 +24,9 @@
 		"address": "Vivekananda Nagar, Kamala Nagar, Road Number 3, Dilsukhnagar, Hyderabad - 500060",
 		"description": "The THP Institute was established in 1968 by Thakur Hari Prasad, whose oldest son was mentally handicapped. Since then, the institute has established itself as one of the premier institutions of care for the mentally disabled.",
 		"contact": "2404-6733, 2404-5454",
-		"locality": "dilsukhnagar"
+		"locality": "dilsukhnagar",
+		"lat": "17.364614000",
+		"lan": "78.530425000"
 	},
 
 	{
@@ -46,7 +34,9 @@
 		"address": "8-2-545, P O Box Number 45, Road Number 7, Banjara Hills, Hyderabad - 50003",
 		"description": "NGO With Membership, Interested In Birds And Natural History",
 		"contact": "2335-0683",
-		"locality": "banjara hills"
+		"locality": "banjara hills",
+		"lat": "17.414129000",
+		"lan": "78.451045000"
 	},
 
 	{
@@ -54,15 +44,9 @@
 		"address": "Plot Number 403/9, Road Number 35, Jubilee Hills, Hyderabad - 500033",
 		"description": "The Blue Cross Of Hyderabad was conceptualized by Amala Akkineni, Nagarjuna Akkineni and Dr. Vijaya Kumar (from the Dept of Animal Husbandry, AP), and formally registered as a society in 1993. Initially set up as an animal rescue service, the Blue Cross additionally offers an impressive range of services for animals. It would surprise you to know that since its inception, the Society has successfully helped 90,295 animals as we write this in early 2004",
 		"contact": "2354-4355, 2354-5523, 3298-9858",
-		"locality": "jubilee hills"
-	},
-
-	{
-		"title": "Make-A-Wish Foundation Of India",
-		"address": "Plot Number 231 A, Road Number 36, Jubilee Hills, Hyderabad - 500033",
-		"description": "Since 1980, the Make-A-Wish foundation has fulfilled 100,000 such wishes for children with terminal or life-threatening diseases. In 1996, Uday Joshi brought the Make-A-Wish Foundation to India, and in 2004, MAW was set up in Hyderabad.",
-		"contact": "Not available",
-		"locality": "jubilee hills"
+		"locality": "jubilee hills",
+		"lat": "17.440682000",
+		"lan": "78.404585000"
 	},
 
 	{
@@ -70,7 +54,9 @@
 		"address": "Academy For A Better World, ISB Road, Lane Beside Pullela Gopichand Badminton Academy, Gachibowli, Hyderabad - 500032",
 		"description": "Not available",
 		"contact": "2300-1234, 3241-8177 ",
-		"locality": "gachibowli"
+		"locality": "gachibowli",
+		"lat": "17.437847000",
+		"lan": "78.351370000"
 	},
 
 	{
@@ -78,7 +64,9 @@
 		"address": "Lower Tank Bund Road, Domalguda, Hyderabad - 500029",
 		"description": "Free coaching for SC/ST students for competitive exams.",
 		"contact": "2762-1453, 2762-1454",
-		"locality": "domalguda"
+		"locality": "domalguda",
+		"lat": "17.417079000",
+		"lan": "78.481814000"
 	},
 
 	{
@@ -86,7 +74,9 @@
 		"address": "83, Yogashram, 1-2-593/3/2, Gagan Mahal Road, Domalguda, Hyderabad - 500029 ",
 		"description": "Not available",
 		"contact": "2763-1462 ",
-		"locality": "domalguda"
+		"locality": "domalguda",
+		"lat": "17.411110000",
+		"lan": "78.481231000"
 	},
 
 	{
@@ -94,15 +84,9 @@
 		"address": "Plot Number 39, Aravindh Nagar Colony, Domalguda, Hyderabad - 500029",
 		"description": "Not available",
 		"contact": "2760-0258 ",
-		"locality": "domalguda"
-	},
-
-	{
-		"title": "",
-		"address": "",
-		"description": "",
-		"contact": "",
-		"locality": ""
+		"locality": "domalguda",
+		"lat": "17.428221000",
+		"lan": "78.546844000"
 	},
 
 	{

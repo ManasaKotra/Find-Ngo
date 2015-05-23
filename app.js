@@ -25,8 +25,8 @@ var ngoSchema = new mongoose.Schema({
   description: String,
   contact: String,
   locality: String,
-  lat: String,
-  lan: String },
+  lat: Number,
+  lan: Number },
   { collection: 'ngolist'});
 
 var ngo = mongoose.model('ngo', ngoSchema);
@@ -61,7 +61,6 @@ app.post('/',function(req, res){
   	});
   }
 
-
 });
 
 app.post('ngo',function(req, res){
@@ -82,8 +81,6 @@ app.post('ngo',function(req, res){
           res.render('ngo', { list: docs });
   	});
   }
-
-
 
 });
 

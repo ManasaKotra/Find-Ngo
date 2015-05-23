@@ -87,13 +87,6 @@
 </footer>
 
 
-<script src="/javascripts/jquery.js"></script>
-<script src="/javascripts/bootstrap.min.js"></script>
-<script src="/javascripts/modernizr.js"></script>
-<script src="/javascripts/myscript.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-
-
 <script>
 	window.onload=function()
   {
@@ -105,19 +98,36 @@
 
 		var ngolist = <%-JSON.stringify(list)%>;
 		console.log(ngolist);
+		var ngotitles = {};
+		for (var i = 0; i < ngolist.length; i++) {
+			ngotitles[i] = ngolist[i].title;
+		}
 
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     var bounds = new google.maps.LatLngBounds();
     var places =[];
 
-			for( i=0 ; i< ngolist.length ; i++ ){
-				  places.push(new google.maps.LatLng(ngolist[i].lat ,ngolist[i].lan));
+			for( i=0 ; i < ngolist.length ; i++ ){
+					var latitude = JSON.parse(ngolist[i].lat);
+					var longitude = JSON.parse(ngolist[i].lan);
+					console.log(latitude,longitude);
+				  places.push(new google.maps.LatLng(latitude, longitude));
 			}
 
-      for( i=0 ; i < places.length ; i++)
+      for( i = 0 ; i < places.length ; i++)
       {
-        var marker= new google.maps.Marker({position:places[i],map: map,title:'place Number'+i});
+        var marker = new google.maps.Marker({position:places[i],map: map,title:ngotitles[i],clickable: true});
+
+				marker.info = new google.maps.InfoWindow({
+					content: '<b>' + ngotitles[i] + '</b><br>'
+				});
+
         bounds.extend(places[i]);
+
+				google.maps.event.addListener(marker, 'click', function() {
+				  this.info.open(map, marker);
+				});
+
       }
       map.fitBounds(bounds);
   }
