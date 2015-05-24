@@ -35,10 +35,6 @@ var ngo = mongoose.model('ngo', ngoSchema);
 // index page
 app.get('/', function(req, res) {
     res.render('index');
-    // ngo.find( {} , function(err, docs) {
-    // 		if (err) return console.log(err);
-    //       res.render('index', { list: docs });
-  	// });
 });
 
 //search request
@@ -56,7 +52,9 @@ app.post('/',function(req, res){
     });
   } else{
     ngo.find( { "locality": req_locality } , function(err, docs) {
-    		if (err) return console.log(err);
+      console.log(docs);
+      if (err) return console.log(err);
+    		if (docs == '') res.render('error', { message: "Sorry! No result found ! :/" });
           res.render('ngo', {locals: { list: docs }});
   	});
   }
@@ -77,7 +75,8 @@ app.post('ngo',function(req, res){
     });
   } else{
     ngo.find( { "locality": req_locality } , function(err, docs) {
-    		if (err) return console.log(err);
+      if (err) return console.log(err);
+    		if (docs == '') res.render('error', { message: "Sorry! No result found ! :/" });
           res.render('ngo', { list: docs });
   	});
   }

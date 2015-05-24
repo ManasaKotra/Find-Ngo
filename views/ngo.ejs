@@ -66,15 +66,17 @@
 <div class="searchres container">
 <hr>
 <% for (var i = 0; i < list.length; i++) { %>
-<div class="col-md-8">
-<a href="#" style="text-decoration:none"><h2><%= list[i].title  %></h2></a>
-<p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;<%= list[i].address %>
-<a href="#" style="text-decoration:none">&nbsp;&nbsp;<nobr>- Show on map</nobr></a></p>
-<p><%= list[i].description %><br></p>
-<p><span style="font-size:20px;">Contact :</span> <%= list[i].contact  %> </p>
-<div id="latlan" style="visibility: hidden;">
-	<%= list[i].lat  %> <%= list[i].lan  %>
-</div>
+<div class="row">
+	<div class="col-md-9 col-md-offset-1">
+	<a href="#" style="text-decoration:none"><h2><%= list[i].title  %></h2></a>
+	<p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp;<%= list[i].address %>
+	<a href="#" style="text-decoration:none">&nbsp;&nbsp;<nobr>- Show on map</nobr></a></p>
+	<p><%= list[i].description %><br></p>
+	<p><span style="font-size:20px;">Contact :</span> <%= list[i].contact  %> </p>
+	<div id="latlan" style="visibility: hidden;">
+		<%= list[i].lat  %> <%= list[i].lan  %>
+	</div>
+	</div>
 </div>
 <% } %>
 </div>
@@ -97,10 +99,12 @@
     };
 
 		var ngolist = <%-JSON.stringify(list)%>;
-		console.log(ngolist);
+		//console.log(ngolist);
 		var ngotitles = {};
+		var ngoaddresses = {};
 		for (var i = 0; i < ngolist.length; i++) {
 			ngotitles[i] = ngolist[i].title;
+			ngoaddresses[i] = ngolist[i].address;
 		}
 
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
@@ -110,7 +114,7 @@
 			for( i=0 ; i < ngolist.length ; i++ ){
 					var latitude = JSON.parse(ngolist[i].lat);
 					var longitude = JSON.parse(ngolist[i].lan);
-					console.log(latitude,longitude);
+					//console.log(latitude,longitude);
 				  places.push(new google.maps.LatLng(latitude, longitude));
 			}
 
@@ -119,18 +123,22 @@
         var marker = new google.maps.Marker({position:places[i],map: map,title:ngotitles[i],clickable: true});
 
 				marker.info = new google.maps.InfoWindow({
-					content: '<b>' + ngotitles[i] + '</b><br>'
+					content: '<b style="font-size:20px;">' + ngotitles[i] + '</b><br><span style="font-size:15px;">' + ngoaddresses[i] + '</span><br>'
 				});
 
         bounds.extend(places[i]);
 
 				google.maps.event.addListener(marker, 'click', function() {
-				  this.info.open(map, marker);
+					this.info.open(map, marker);
 				});
-
       }
+
+
+
       map.fitBounds(bounds);
+
   }
+
 </script>
 
 </body>

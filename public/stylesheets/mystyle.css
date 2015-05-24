@@ -1,3 +1,7 @@
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px white inset;
+    -webkit-text-fill-color: #333;
+}
 .facebook,
 .twitter,
 .google,
@@ -36,7 +40,7 @@ html {
   min-height: 100%;
 }
 body {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 .carosal {
   padding-top: 20px;
@@ -137,9 +141,9 @@ h3 {
 #modal-launcher {
   margin: 30% 0 0 30%;
 }
-h1 {
+/*h1 {
   border-bottom: 5px solid #00bb64;
-}
+}*/
 .navbar-default {
   border: none;
 }
@@ -179,6 +183,9 @@ a:active {
   margin-left: 30%;
   margin-right: 25%;
 }
-.searchres .col-md-8 > a > h2:hover {
+.searchres .col-md-9 > a > h2:hover {
   font-size: 33px;
+}
+.footer {
+  background-color: white;
 }
