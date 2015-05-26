@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var connect = require('connect');
 var mongoose = require('mongoose');
 // var db = mongoose.connect('mongodb://localhost:27017/ngos');
-var db = mongoose.connect('mongodb://user:123@ds031932.mongolab.com:31932/ngos');
+var db = mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://user:123@ds031932.mongolab.com:31932/ngos');
 var express = require('express');
 var app = express();
 
@@ -84,5 +84,7 @@ app.post('ngo',function(req, res){
 
 });
 
-app.listen(9000);
-console.log('Project started at http://127.0.0.1:9000');
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+    console.log("Listening on " + port);
+});
