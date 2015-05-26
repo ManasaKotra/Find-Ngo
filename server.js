@@ -2,7 +2,8 @@
 var bodyParser = require('body-parser');
 var connect = require('connect');
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost:27017/ngos');
+// var db = mongoose.connect('mongodb://localhost:27017/ngos');
+var db = mongoose.connect('mongodb://user:123@ds031932.mongolab.com:31932/ngos');
 var express = require('express');
 var app = express();
 
