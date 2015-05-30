@@ -10,9 +10,17 @@
     "express": "^4.12.4",
     "mongoose": "^4.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "karma": "^0.12.33",
+    "mocha": "^2.2.5",
+    "phantomjs": "^1.9.17",
+    "sinon": "^1.14.1",
+    "supertest": "^1.0.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "test": "grunt travis --verbose"
   },
   "repository": {
     "type": "git",

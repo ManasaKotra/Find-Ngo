@@ -158,7 +158,7 @@ h3 {
 }
 .navbar-default .navbar-nav > li > a:hover {
   background: #2eb82e;
-  font-size: 25px;
+  font-size: 20px;
 }
 .infoabout {
   margin-top: 5px;
@@ -188,4 +188,15 @@ a:active {
 }
 .footer {
   background-color: white;
+}
+.jumbotron {
+  margin-top: 50px;
+  background-color: white;
+}
+.me {
+  max-width: 300px;
+  max-height: 350px;
+}
+.thumbnail {
+  max-width: 200px;
 }

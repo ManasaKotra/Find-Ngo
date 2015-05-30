@@ -38,6 +38,11 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
+// about page
+app.get('/about', function(req, res) {
+    res.render('about');
+});
+
 //search request
 app.post('/',function(req, res){
 
