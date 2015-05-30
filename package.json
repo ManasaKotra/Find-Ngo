@@ -7,8 +7,9 @@
     "body-parser": "^1.12.4",
     "connect": "^3.3.5",
     "ejs": "^1.0.0",
-    "grunt": "^0.4.5",
     "express": "^4.12.4",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.2",
     "mongoose": "^4.0.3"
   },
   "devDependencies": {
@@ -21,7 +22,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "test": "grunt travis --verbose"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
