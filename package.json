@@ -7,12 +7,12 @@
     "body-parser": "^1.12.4",
     "connect": "^3.3.5",
     "ejs": "^1.0.0",
+    "grunt": "^0.4.5",
     "express": "^4.12.4",
     "mongoose": "^4.0.3"
   },
   "devDependencies": {
     "chai": "^2.3.0",
-    "grunt": "^0.4.5",
     "karma": "^0.12.33",
     "mocha": "^2.2.5",
     "phantomjs": "^1.9.17",
