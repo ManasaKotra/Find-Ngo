@@ -12,4 +12,12 @@ describe('Get /', function() {
         if (err) throw err;
       });
   });
+  it('returns ngo.ejs', function() {
+    request(app)
+      .get('/ngo')
+      .end(function(err, res){
+        if (err) throw err;
+      });
+  });
+  
 });
