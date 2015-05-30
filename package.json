@@ -2,7 +2,8 @@
   "name": "findngo",
   "version": "1.0.0",
   "description": "Search engine for NGOs",
-  "main": "app.js",
+  "main": "server.js",
+  "author": "manasakotra",
   "dependencies": {
     "body-parser": "^1.12.4",
     "connect": "^3.3.5",
