@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "test": "gulp"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
