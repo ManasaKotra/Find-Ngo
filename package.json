@@ -11,9 +11,11 @@
     "mongoose": "^4.0.3"
   },
   "devDependencies": {
+    "browserify": "^10.2.3",
     "chai": "^2.3.0",
     "gulp": "^3.8.11",
-    "gulp-jshint": "^1.9.2",
+    "gulp-jshint": "^1.11.0",
+    "gulp-mocha-phantomjs": "^0.6.1",
     "jshint": "^2.8.0",
     "mocha": "^2.2.5",
     "phantomjs": "^1.9.17",

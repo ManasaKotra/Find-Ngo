@@ -1,8 +1,6 @@
-'use strict';
 
 // load the things we need
 var bodyParser = require('body-parser');
-var connect = require('connect');
 var mongoose = require('mongoose');
 var db = mongoose.connect('mongodb://localhost:27017/ngos');
 // var db = mongoose.connect(process.env.MONGOLAB_URI ||
