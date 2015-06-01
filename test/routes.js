@@ -2,7 +2,7 @@ var expect = require('chai').expect;
 var request = require('supertest');
 
 
-describe('Get /', function() {
+describe('Get ', function() {
    var app = 'http://localhost:3000/';
 
   it('returns index.ejs', function() {
@@ -19,5 +19,5 @@ describe('Get /', function() {
         if (err) throw err;
       });
   });
-  
+
 });

@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "description": "Search engine for NGOs",
   "main": "server.js",
-  "author": "manasakotra",
+  "author": "manasaK",
   "dependencies": {
     "body-parser": "^1.12.4",
-    "connect": "^3.3.5",
     "ejs": "^1.0.0",
     "express": "^4.12.4",
     "mongoose": "^4.0.3"
   },
   "devDependencies": {
     "chai": "^2.3.0",
-    "karma": "^0.12.33",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.2",
+    "jshint": "^2.8.0",
     "mocha": "^2.2.5",
     "phantomjs": "^1.9.17",
     "sinon": "^1.14.1",
@@ -27,7 +28,6 @@
     "type": "git",
     "url": "git+https://github.com/manasakotra/Find-Ngo.git"
   },
-  "author": "manasaK",
   "license": "ISC",
   "engines": {
     "node": "0.12.x"

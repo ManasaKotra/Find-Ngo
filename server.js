@@ -1,9 +1,12 @@
+'use strict';
+
 // load the things we need
 var bodyParser = require('body-parser');
 var connect = require('connect');
 var mongoose = require('mongoose');
-// var db = mongoose.connect('mongodb://localhost:27017/ngos');
-var db = mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://user:123@ds031932.mongolab.com:31932/ngos');
+var db = mongoose.connect('mongodb://localhost:27017/ngos');
+// var db = mongoose.connect(process.env.MONGOLAB_URI ||
+//                             'mongodb://user:123@ds031932.mongolab.com:31932/ngos');
 var express = require('express');
 var app = express();
 
@@ -51,16 +54,16 @@ app.post('/',function(req, res){
 
 	console.log(req.body);
 
-  if( req_locality == "all" || req_locality == "" ){
+  if( req_locality === 'all'|| req_locality === '' ){
     ngo.find( {} , function(err, docs) {
     		if (err) return console.log(err);
           res.render('ngo', {locals: { list: docs }});
     });
   } else{
-    ngo.find( { "locality": req_locality } , function(err, docs) {
+    ngo.find( { 'locality': req_locality } , function(err, docs) {
       console.log(docs);
       if (err) return console.log(err);
-    		if (docs == '') res.render('error', { message: "Sorry! No result found ! :/" });
+    		if (docs === '') res.render('error', { message: 'Sorry! No result found ! :/' });
           res.render('ngo', {locals: { list: docs }});
   	});
   }
@@ -74,15 +77,15 @@ app.post('ngo',function(req, res){
 
 	console.log(req.body);
 
-  if( req_locality == "all" || req_locality == "" ){
+  if( req_locality === 'all' || req_locality === '' ){
     ngo.find( {} , function(err, docs) {
     		if (err) return console.log(err);
           res.render('ngo', { list: docs });
     });
   } else{
-    ngo.find( { "locality": req_locality } , function(err, docs) {
+    ngo.find( { 'locality': req_locality } , function(err, docs) {
       if (err) return console.log(err);
-    		if (docs == '') res.render('error', { message: "Sorry! No result found ! :/" });
+    		if (docs === '') res.render('error', { message: 'Sorry! No result found ! :/' });
           res.render('ngo', { list: docs });
   	});
   }
@@ -91,5 +94,5 @@ app.post('ngo',function(req, res){
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
-    console.log("Listening on " + port);
+    console.log('Listening on http://localhost:' + port);
 });
