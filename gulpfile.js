@@ -12,12 +12,12 @@ var pngquant = require('imagemin-pngquant');
 var mochaPhantomjs = require('gulp-mocha-phantomjs');
 
 gulp.task('clean', function () {
-  return gulp.src('build/*', {read: false})
+  return gulp.src('build', {read: false})
     .pipe(clean());
 });
 
 gulp.task('copy', function(){
-  gulp.src(['server.js'])
+  gulp.src(['*', '.*', '!build', '!.git', '!test', '!node_modules'])
     .pipe(gulp.dest('build/'));
   gulp.src('views/**/*')
     .pipe(gulp.dest("build/views"));
@@ -47,12 +47,6 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('build/public/javascripts'));
 });
 
-gulp.task('lint', function() {
-  return gulp.src('*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
-});
-
 gulp.task('watch', function() {
   gulp.watch('*.js', ['lint']);
   gulp.watch('test/*.js', ['test']);
@@ -63,4 +57,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['clean', 'copy', 'minify-css', 'minify-img', 'minify-js']);
-gulp.task('default', ['lint', 'watch']);
+gulp.task('default', ['watch']);
