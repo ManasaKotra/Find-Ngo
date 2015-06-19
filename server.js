@@ -1,9 +1,9 @@
 // load the things we need
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost:27017/ngos');
-// var db = mongoose.connect(process.env.MONGOLAB_URI ||
-//                             'mongodb://user:123@ds031932.mongolab.com:31932/ngos');
+// var db = mongoose.connect('mongodb://localhost:27017/ngos');
+var db = mongoose.connect(process.env.MONGOLAB_URI ||
+                           'mongodb://user:123@ds031932.mongolab.com:31932/ngos');
 var express = require('express');
 var app = express();
 
