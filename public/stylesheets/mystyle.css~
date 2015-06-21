@@ -170,7 +170,7 @@ h3 {
 .infoabout .row .col-md-4 > i {
   font-size: 130px;
   margin-left: 33%;
-  color: #CC2900;
+  color: #222;
 }
 /*
 .infoabout .row .col-md-4 .fa-h {

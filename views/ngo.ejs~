@@ -41,7 +41,7 @@
 <form class="form-inline " role="form" action="" method="POST" target="_self">
 
 <div class="btn-group">
-	<button type="button" class="btn btn-success btn-lg btn_city" id="btn-locality" name="city"> Hyderabad </button>
+	<button type="button" class="btn btn-primary btn-lg btn_city" id="btn-locality" name="city"> Hyderabad </button>
 </div>
 
 <!-- <div class="btn-group">
@@ -75,7 +75,7 @@
 </div> -->
 
 <div class="form-group">
-	<button type="submit" href="" id="searchsubmit" value="Search" class="btn btn-lg btn-success  btn-block searchbutton">
+	<button type="submit" href="" id="searchsubmit" value="Search" class="btn btn-lg btn-primary  btn-block searchbutton">
 		<a style="text-decoration:none;color:white;">Search&nbsp;&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i></a></button>
 </div>
 
